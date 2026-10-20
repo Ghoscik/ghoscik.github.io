@@ -51,7 +51,7 @@ body {
   flex-direction: column;
   background: radial-gradient(
     circle at 50% 50%,
-    #4d2f29 0%,
+    #663f32 0%,
     var(--primary-color) 70%
   );
   color: var(--text-color);
@@ -398,6 +398,23 @@ main {
   line-height: 1.65;
   text-align: left;
   color: var(--secondary-color);
+}
+
+.footer-contact ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.footer-contact li {
+  margin-bottom: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--secondary-color);
+}
+
+.footer-contact address {
+  margin: 0;
 }
 
 .site-footer nav {
