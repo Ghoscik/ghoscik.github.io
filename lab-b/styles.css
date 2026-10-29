@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eefaf4 0%, #f8fbff 100%);
+  font-family: Arial, sans-serif;
+  color: #1d2a35;
+}
+
+.container {
+  width: min(560px, 90vw);
+  background: #ffffff;
+  border: 1px solid #dfeee6;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(58, 89, 77, 0.12);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.task_search,
+.task_add,
+.task_date {
+  width: 100%;
+  border: 1px solid #dfe7e4;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.96rem;
+  background: #f9fcfb;
+  color: #1d2a35;
+}
+
+.task_search:focus,
+.task_add:focus,
+.task_date:focus {
+  outline: 2px solid #7ec9aa;
+  outline-offset: 1px;
+}
+
+.task_list {
+  display: grid;
+  gap: 12px;
+}
+
+.task_item {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto auto;
+  align-items: center;
+  column-gap: 12px;
+  row-gap: 8px;
+  padding: 12px 14px;
+  border: 1px solid #edf2ef;
+  border-radius: 12px;
+  background: #f8fbf9;
+}
+
+.task_checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #49a57d;
+  cursor: pointer;
+}
+
+.span_name {
+  width: 80%;
+  min-height: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #22323d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.span_date {
+  font-size: 0.82rem;
+  color: #5c6f78;
+  background: #edf7f1;
+  border-radius: 999px;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+.btn_remove_task {
+  border: none;
+  background: #fbe4e4;
+  color: #b44848;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn_remove_task:hover,
+.task_save:hover {
+  opacity: 0.9;
+}
+
+.task_add,
+.task_date {
+  display: block;
+}
+
+.task_save {
+  align-self: flex-end;
+  border: none;
+  background: #49a57d;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.hidden{
+  display: none;
+}
+
+input[type="date"]::-webkit-clear-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 18px;
+  }
+
+  .task_item {
+    grid-template-columns: 20px minmax(0, 1fr) auto;
+  }
+
+  .span_date {
+    grid-column: 2 / span 2;
+    justify-self: start;
+  }
+}

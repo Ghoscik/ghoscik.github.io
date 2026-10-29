@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paweł Ewald (55592) - AI LAB B</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+<main class="container">
+    <input class="task_search" type="search" placeholder="Search tasks" aria-label="Search tasks">
+    <section class="task_list">
+        <div class="task_item hidden">
+            <input class="task_checkbox" type="checkbox" aria-label="Mark task complete">
+            <span class="span_name"></span>
+            <span class="span_date"></span>
+            <button class="btn_remove_task" type="button" aria-label="Remove task" onclick="removeTask(this)">Remove</button>
+        </div>
+    </section>
+
+    <input class="task_add" type="text" placeholder="Add a task" aria-label="New task">
+    <input class="task_date" type="date" aria-label="Task date" min="" required>
+    <button class="task_save" type="submit" onclick="addTask()">Save task</button>
+</main>
+</body>
+</html>
