@@ -2,8 +2,8 @@ const locateBtn = document.querySelector("#locate-btn");
 const downloadMapBtn = document.querySelector("#download-map-btn");
 const unsolvedContainer = document.querySelector("#unsolved-puzzles");
 const puzzleCanvas = document.querySelector("#puzzle-canvas");
+let userMarker = null;
 
-// 1. Inicjalizacja mapy Leaflet
 const map = L.map('panel--map').setView([51.1079, 17.0385], 13);
 
 if ("Notification" in window && Notification.permission !== "granted") {
@@ -81,6 +81,12 @@ function geoSuccess(position) {
   const lat = position.coords.latitude;
   const coords = [lat, lon];
   map.setView(coords, 16);
+
+  if (userMarker) {
+    userMarker.setLatLng(coords);
+  } else {
+    userMarker = L.marker(coords).addTo(map);
+  }
 }
 function divideBoard(canvasResult, tiles, rows, cols) {
   const tileWidth = canvasResult.width / cols;
