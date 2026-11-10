@@ -1,14 +1,77 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Imie Nazwisko (00000) - AI LAB D</title>
-
     <link rel="stylesheet" href="styles.css" type="text/css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
+    <main class="container">
+        <header class="page-header">
+            <p class="eyebrow">PROGNOZA POGODY</p>
+            <h1>Sprawdź pogodę</h1>
+            <p class="intro">Znajdź aktualne warunki dla swojej okolicy.</p>
+        </header>
 
+        <div class="input-field" role="search">
+            <label class="sr-only" for="city">Nazwa miasta</label>
+            <input id="city" name="city" type="search" placeholder="Wpisz miasto..." autocomplete="off">
+            <button id="get-weather" type="button">Szukaj <span aria-hidden="true">→</span></button>
+        </div>
+
+        <section class="weather-data" aria-label="Aktualna pogoda">
+            <article class="tile">
+                <div class="tile-heading">
+                    <div>
+                        <p class="eyebrow">TERAZ W</p>
+                        <h2 data-city-name>--</h2>
+                    </div>
+                    <img class="weather-icon" data-current-icon src="https://openweathermap.org/img/wn/01d@2x.png" alt="Ikona pogody">
+                </div>
+
+                <div class="temperature">
+                    <span class="temperature-value" data-current-temp>--°</span>
+                    <p class="conditions">
+                        <span data-current-desc>Wpisz miasto...</span><br>
+                        <span>Odczuwalna <strong data-current-feels>--°</strong></span>
+                    </p>
+                </div>
+
+                <div class="tile-details">
+                    <div><span>Wiatr</span><strong data-current-wind>-- km/h</strong></div>
+                    <div><span>Wilgotność</span><strong data-current-humidity>--%</strong></div>
+                    <div><span>Ciśnienie</span><strong data-current-pressure>-- hPa</strong></div>
+                </div>
+            </article>
+        </section>
+
+        <section class="hourly-forecast" aria-labelledby="hourly-forecast-title">
+            <h2 id="hourly-forecast-title">Prognoza godzinowa</h2>
+            <div class="hourly-forecast-list" id="hourly-forecast-list"></div>
+        </section>
+
+        <template id="hourly-weather-template">
+            <article class="tile hourly-tile">
+                <div class="hourly-current">
+                    <div class="hourly-heading">
+                        <span class="hourly-time" data-hour>--:--</span>
+                        <img class="hourly-icon" data-icon src="" alt="Ikona pogody" style="width: 42px; height: 42px; object-fit: contain;">
+                    </div>
+                    <span class="temperature-value" data-temperature>--°</span>
+                    <p class="conditions" data-description>Opis pogody</p>
+                    <p class="feels-like">Odczuwalna <strong data-feels-like>--°</strong></p>
+                </div>
+
+                <div class="hourly-details">
+                    <div><span>Wiatr</span><strong data-wind>--</strong></div>
+                    <div><span>Wilgotność</span><strong data-humidity>--</strong></div>
+                    <div><span>Ciśnienie</span><strong data-pressure>--</strong></div>
+                </div>
+            </article>
+        </template>
+
+    </main>
 </body>
 </html>
